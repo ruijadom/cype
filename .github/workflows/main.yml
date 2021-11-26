@@ -1,20 +1,19 @@
 name: E2E
 on: push
 jobs:
-  test:
-    runs-on: ubuntu-20.04
+
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+
     steps:
-      - uses: actions/checkout@master
-      - name: Install dependencies
-        uses: cypress-io/github-action@v2
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          # just perform install
-          runTests: false
-      - name: Run e2e tests
-        uses: cypress-io/github-action@v2
-        with:
-          # we have already installed all dependencies above
-          install: false
-          config-file: tests/cypress/cypress.json
-          # Cypress tests and config file are in "e2e" folder
-          start: npm run test:e2e:ci
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run e2e:ci
