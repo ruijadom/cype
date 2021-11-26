@@ -21,7 +21,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          config-file: tests/cypress/cypress.json
+          config-file: /tests/cypress/cypress.json
         env:
           CYPRESS_host: 0.0.0.0
           CYPRESS_port: 3001
