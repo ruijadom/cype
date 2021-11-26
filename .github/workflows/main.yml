@@ -12,9 +12,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Cypress run with env
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+            node:version: '14'
+      - name: Install dependencies
+        run: npm install       
+      - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          config-file: tests/cypress/cypress.json
         env:
           CYPRESS_host: 0.0.0.0
           CYPRESS_port: 3001
