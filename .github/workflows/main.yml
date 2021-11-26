@@ -1,6 +1,7 @@
 name: E2E
 
 on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
