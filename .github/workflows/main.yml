@@ -17,6 +17,3 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run test:e2e:ci
-        env:
-          CYPRESS_host: http://localhost
-          CYPRESS_port: 3001
