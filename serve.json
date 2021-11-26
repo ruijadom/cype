@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://0.0.0.0:3001/",
+  "viewportWidth": 1600,
+  "viewportHeight": 1400,
+  "fixturesFolder": "cypress/src/fixtures",
+  "integrationFolder": "cypress/src/integration",
+  "pluginsFile": "cypress/src/plugins/index.ts",
+  "supportFile": "cypress/src/support/index.ts",
+  "screenshotsFolder": "cypress/assets/screenshots",
+  "videosFolder": "cypress/assets/videos",
+  "downloadsFolder": "cypress/assets/downloads",
+  "$schema": "https://on.cypress.io/cypress.schema.json"
+}
