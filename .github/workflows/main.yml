@@ -14,18 +14,9 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
+          env:
+            CYPRESS_host: 0.0.0.0
+            CYPRESS_port: 3001
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run test:e2e:ci
-
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      # Test run video was always captured, so this action uses "always()" condition
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
