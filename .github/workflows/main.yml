@@ -15,5 +15,6 @@ jobs:
         with:
           # we have already installed all dependencies above
           install: false
+          config-file: tests/cypress/cypress.json
           # Cypress tests and config file are in "e2e" folder
           start: npm run test:e2e:ci
