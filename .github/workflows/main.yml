@@ -10,10 +10,11 @@ jobs:
         node-version: [12.x, 14.x]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run test:e2e:ci
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress run with env
+        uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_host: 0.0.0.0
+          CYPRESS_port: 3001
