@@ -1,19 +1,12 @@
 name: E2E
-on: push
+
+on: [push]
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  cypress-run:
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@master
-      - name: Install dependencies
-        uses: cypress-io/github-action@v1
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
         with:
-          # just perform install
-          runTests: false
-      - name: Run e2e tests
-        uses: cypress-io/github-action@v1
-        with:
-          # we have already installed all dependencies above
-          install: false
-          # Cypress tests and config file are in "e2e" folder
+          start: npm start
           working-directory: test
