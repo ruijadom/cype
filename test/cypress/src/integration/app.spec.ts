@@ -7,7 +7,7 @@ describe("app", () => {
     cy.get("h1").should("be.visible").contains("Name: cype");
   })
   it("should test header 2", () => {
-    cy.get("h2").should("be.visible").contains("Framework: react");
+    cy.get("h2").should("be.visible").contains("ssFramework: react");
   })
   it("should test header 3", () => {
     cy.get("h3").should("be.visible").contains("Language: TypeScript");
