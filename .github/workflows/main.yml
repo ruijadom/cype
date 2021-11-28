@@ -12,4 +12,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           config-file: test/e2e/cypress.json
-          start: start-server-and-test start 3001 cy:run
+          build: npm run build
+          start: npm start --config baseUrl="https://www.staging-website.com:3001"

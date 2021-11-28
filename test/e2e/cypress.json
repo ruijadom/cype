@@ -9,5 +9,8 @@
   "screenshotsFolder": "test/e2e/assets/screenshots",
   "videosFolder": "test/e2e/assets/videos",
   "downloadsFolder": "test/e2e/assets/downloads",
-  "$schema": "https://on.cypress.io/cypress.schema.json"
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "env": {
+    "baseUrl": "http://localhost:3001/"
+  }
 }
