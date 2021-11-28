@@ -11,8 +11,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          wait-on: 'http://localhost:3001'
-          wait-on-timeout: 120
           config-file: test/e2e/cypress.json
           build: npm run build
           start: npm start
