@@ -7,8 +7,8 @@
     "build:start": "cd dist && PORT=3001 npx serve",
     "start": "webpack serve --open --mode development",
     "start:live": "webpack serve --open --mode development --live-reload --hot",
-    "cy:open": "cypress open --project $PWD/test --config-file e2e/cypress.json ",
-    "cy:run": "cypress run --project $PWD/test --config-file e2e/cypress.json ",
+    "cy:open": "cypress open --config-file test/e2e/cypress.json ",
+    "cy:run": "cypress run --config-file test/e2e/cypress.json ",
     "test:e2e:ci": "start-server-and-test start 3001 cy:run"
   },
   "license": "MIT",
