@@ -19,7 +19,7 @@ jobs:
 
           install: false
           working-directory: test/e2e
-          config-file: test/e2e/cypress.json
+          config-file: cypress.json
           start: npm start
           wait-on: "http://0.0.0.0:3001"
         env:
