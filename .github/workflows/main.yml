@@ -12,5 +12,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           config-file: test/e2e/cypress.json
-          build: npm run build
-          start: npm start --config baseUrl="https://www.staging-website.com:3001"
+          start: npm run test:e2e
+          wait-on: "http://0.0.0.0:3001"
+        env:
+          DEV_SERVER_PORT: 3001
