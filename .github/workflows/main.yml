@@ -18,7 +18,7 @@ jobs:
         with:
           install: false
           config-file: e2e/cypress.json
-          start: npm run test:e2e
+          start: npm start
           wait-on: "http://0.0.0.0:3001"
         env:
           DEV_SERVER_PORT: 3001
