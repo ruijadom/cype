@@ -11,7 +11,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          working-directory: test/e2e
+          install: false
           config-file: test/e2e/cypress.json
           start: npm run test:e2e
           wait-on: "http://0.0.0.0:3001"
